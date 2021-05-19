@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <title>Music Service</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div id="glass" style="margin-left: 32vw; margin-top: 20vh;">
+  <h1>REGISTER</h1>
+
+  <form action="/processregister" method="POST" enctype="multipart/form-data">
+    <!-- <label for="user">Email:</label><br> -->
+    <input type="email" id="user" name="user" placeholder="email"><br><br>
+    <!-- <label for="name">User Name:</label><br> -->
+    <input type="text" id="name" name="name" placeholder="username"><br><br>
+    <!-- <label for="pass">Password:</label><br> -->
+    <input type="password" id="pass" name="pass" placeholder="password"><br><br><br><br>
+    <input type="submit" value="register"><br>
+    <h2>{{ error }}</a></h2>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Music Service</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+      div {
+        background-color: lightgrey;
+        margin-left: 500px;
+        border: 1px solid black;
+        padding: 50px;
+        margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h4><a href="/">logout</a></h4>
+  <form>
+    <h1>Welcome: {{ username }}</a></h1>
+  {% for subscription in subscriptions %}
+    <div id="glass">
+      <form action="/remove" method="POST">
+        <textarea id="email" name="email" rows="1" cols="50" hidden = true>{{ email }}</textarea>
+        <textarea id="titletext" name="titletext" rows="1" cols="50" hidden = true>{{ subscription['title'] }}</textarea>
+        <textarea id="yeartext" name="yeartext" rows="1" cols="50" hidden = true>{{ subscription['year'] }}</textarea>
+        <label><b>Song Name: {{ subscription['title'] }}</b></label><br>
+        <label>Artist: {{ subscription['artist'] }}</label><br>
+        <label>{{ subscription['year'] }}</label><br>
+        <img style="max-height:120px; max-width:120px;" src="https://s3.amazonaws.com/s3782197.assignment2.songs/{{ subscription['title'] }}.jpg"><br>
+        <input type="submit" value="remove">
+      </form>
+    </div>
+  {% endfor %}
+</body>
+</html>

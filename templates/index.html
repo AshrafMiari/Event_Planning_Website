@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Music Service</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+  <link rel="stylesheet" href="static/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+  <div id="login">
+    <div id="glass">
+    <h1>LOGIN </h1>
+
+    <form action="/main" method="POST">
+      <!-- <label for="user">Email:</label><br> -->
+      <input type="email" id="user" name="user" placeholder="email"><br>
+      <!-- <label for="pass">Password:</label><br> -->
+      <input type="password" id="pass" name="pass" placeholder="password"><br>
+      <h2 style="padding-right: 5vw;">{{ error }}</h2>
+      <input type="submit" value="Login"><br><br>
+    </form>
+    <form action="/register" method="POST">
+      <input id="registerInput" type="submit" value="Register"><br>
+    </form>
+  </div>
+  </div>
+  <div id="sideImg">
+    <img src="https://images.unsplash.com/photo-1526732928503-5c58853877ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTh8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80" height="100%">
+  </div>
+  </div>
+</body>
+
+</html>
